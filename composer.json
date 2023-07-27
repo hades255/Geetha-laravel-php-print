@@ -1,0 +1,99 @@
+{
+    "name": "laravel/laravel",
+    "description": "The Laravel Framework.",
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": "^8.0",
+        "artesaos/seotools": "^1.1",
+        "automattic/woocommerce": "3.1.0",
+        "composer/semver": "3.3.2",
+        "consoletvs/charts": "6.6.0",
+        "fruitcake/laravel-cors": "dev-develop",
+        "fzaninotto/faker": "^1.5",
+        "guzzlehttp/guzzle": "7.5.0",
+        "intervention/image": "2.7.2",
+        "knox/pesapal": "^1.0",
+        "laravel/framework": "v10.1.5",
+        "laravel/legacy-factories": "*",
+        "laravel/tinker": "v2.8.1",
+        "laravel/ui": "^4.2",
+        "laravelcollective/html": "v6.4.0",
+        "litespeed/lscache-laravel": "v1.3.5",
+        "maatwebsite/excel": "3.1.48",
+        "masbug/flysystem-google-drive-ext": "^2.2",
+        "milon/barcode": "10.0.0",
+        "mpdf/mpdf": "v8.1.4",
+        "nwidart/laravel-modules": "v8.3.0",
+        "pusher/pusher-php-server": "7.2.2",
+        "razorpay/razorpay": "2.8.5",
+        "sarfraznawaz2005/backupmanager": "*",
+        "spatie/flysystem-dropbox": "2.0.6",
+        "spatie/laravel-activitylog": "4.7.3",
+        "spatie/laravel-image-optimizer": "^1.7",
+        "spatie/laravel-permission": "5.9.1",
+        "srmklive/paypal": "3.0.19",
+        "stancl/tenancy": "v3.7.0",
+        "stripe/stripe-php": "v10.7.0",
+        "yajra/laravel-datatables-oracle": "v10.3.1"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "./vendor/sarfraznawaz2005/backupmanager"
+        }
+    ],
+    "require-dev": {
+        
+        "beyondcode/laravel-dump-server": "1.9.0",
+        "mockery/mockery": "1.5.1",
+        
+        "barryvdh/laravel-debugbar": "v3.8.1",
+        "nunomaduro/collision": "v7.0.5",
+        "phpunit/phpunit": "10.0.12"
+    },
+    "autoload": {
+        "files": [
+            "app/Http/helpers.php"
+        ],
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Modules\\": "Modules/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "php artisan key:generate"
+        ],
+        "post-install-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postInstall"
+        ],
+        "post-update-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate"
+        ],
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ]
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
